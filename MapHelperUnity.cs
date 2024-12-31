@@ -11,7 +11,7 @@ public class MapHelperUnity : EditorWindow
 {
     private const string OutputFolderName = "ForConsoleTextures";
 
-    private const string CurrentVersion = "1.0.0";
+    private const string CurrentVersion = "1.0.1";
     private const string VersionUrl = "https://raw.githubusercontent.com/Jeefrect/MapHelper/main/version";
     private const string ScriptUrl = "https://raw.githubusercontent.com/Jeefrect/MapHelper/main/MapHelperUnity.cs";
     private static bool updateChecked = false;
@@ -222,6 +222,8 @@ public class MapHelperUnity : EditorWindow
     [MenuItem("Tools/Run Auto LODs for Selected Objects")]
     private static void AddLodGroupsToSelectedObjects()
     {
+        CheckForScriptUpdateOnce();
+
         GameObject[] selectedObjects = Selection.gameObjects;
 
         if (selectedObjects.Length == 0)
@@ -271,6 +273,8 @@ public class MapHelperUnity : EditorWindow
     [MenuItem("Tools/Normalize Scale to (1, 1, 1)")]
     private static void NormalizeScale()
     {
+        CheckForScriptUpdateOnce();
+
         GameObject[] selectedObjects = Selection.gameObjects;
 
         if (selectedObjects.Length == 0)
